@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+<defs>
+<linearGradient id="cloak" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7bd6ff"/><stop offset="1" stop-color="#205e84"/></linearGradient>
+<radialGradient id="bg" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/><stop offset="1" stop-color="#0e1022" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="320" height="320" rx="44" fill="#14182f"/>
+<rect x="10" y="10" width="300" height="300" rx="34" fill="url(#bg)" stroke="rgba(255,255,255,0.15)"/>
+<ellipse cx="160" cy="270" rx="72" ry="18" fill="#000814" opacity="0.35"/>
+<circle cx="160" cy="88" r="38" fill="#ffd9b5"/>
+<path d="M122 84c8-34 69-40 85 0-4-14-11-25-25-31-22-8-53 1-60 31z" fill="#2d2137"/>
+<rect x="145" y="122" width="30" height="34" rx="14" fill="#ffd9b5"/>
+<path d="M98 160c12-26 40-36 62-36s50 10 62 36l-14 88H112z" fill="url(#cloak)"/>
+<path d="M83 170c9-15 24-23 38-28l-3 76c-18-6-28-20-35-48z" fill="#1c223d" opacity="0.55"/>
+<path d="M237 170c-9-15-24-23-38-28l3 76c18-6 28-20 35-48z" fill="#1c223d" opacity="0.55"/>
+<rect x="116" y="214" width="28" height="64" rx="14" fill="#2a335e"/>
+<rect x="176" y="214" width="28" height="64" rx="14" fill="#2a335e"/>
+<circle cx="234" cy="76" r="28" fill="#0d1127" stroke="#ffffff22"/>
+<text x="234" y="89" text-anchor="middle" font-size="26" font-family="Segoe UI Emoji, Segoe UI, sans-serif">🛡</text>
+</svg>
