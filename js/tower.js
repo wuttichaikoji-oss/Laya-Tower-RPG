@@ -1,11 +1,1 @@
-
-window.LayaTower = {
-  floorType(floor) {
-    if (floor % 10 === 0) return "boss";
-    if (floor % 5 === 0) return "mini";
-    return "normal";
-  },
-  labelForType(type) {
-    return type === "boss" ? "Boss" : type === "mini" ? "Mini Boss" : "Normal";
-  }
-};
+const save=loadGame();if(!save){location.href="index.html";}document.getElementById("towerInfo").textContent=`${save.name} · ${save.className} · Floor ${save.floor}`;document.getElementById("backMenuBtn").addEventListener("click",()=>location.href="menu.html");document.getElementById("mockBattleBtn").addEventListener("click",()=>{save.floor+=1;saveGame(save);alert("ตอนนี้เป็น Tower Stub เพื่อให้ไปต่อได้ก่อน\nกดแล้วจะเพิ่ม Floor +1");location.reload();});

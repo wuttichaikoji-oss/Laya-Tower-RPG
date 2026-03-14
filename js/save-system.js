@@ -1,18 +1,1 @@
-window.SAVE_KEY = 'layaTowerRpgPhase1Build1';
-
-window.loadGame = function loadGame() {
-  try {
-    const raw = localStorage.getItem(window.SAVE_KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch (e) {
-    return null;
-  }
-};
-
-window.saveGame = function saveGame(data) {
-  localStorage.setItem(window.SAVE_KEY, JSON.stringify(data));
-};
-
-window.resetGame = function resetGame() {
-  localStorage.removeItem(window.SAVE_KEY);
-};
+window.SAVE_KEY="layaTowerRpgSavePhase1";window.saveGame=function(data){localStorage.setItem(SAVE_KEY,JSON.stringify(data));};window.loadGame=function(){try{const raw=localStorage.getItem(SAVE_KEY);return raw?JSON.parse(raw):null;}catch(e){return null;}};window.clearSave=function(){localStorage.removeItem(SAVE_KEY);};window.makeDefaultSave=function(name,gender,heroClass){const cls=HERO_CLASSES[heroClass];return{name,gender,classKey:heroClass,className:cls.name,role:cls.role,level:1,exp:0,hp:cls.stats.hp,maxHp:cls.stats.hp,mp:cls.stats.mp,maxMp:cls.stats.mp,atk:cls.stats.atk,def:cls.stats.def,gold:0,floor:1,checkpoint:1,inventory:[]};};
