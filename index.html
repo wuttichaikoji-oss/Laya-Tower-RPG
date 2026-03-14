@@ -1,1 +1,96 @@
-<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Laya Tower RPG v0.4</title><link rel="stylesheet" href="css/style.css"/></head><body class="page page-title"><div class="stars"></div><div class="mist"></div><div class="title-runes"></div><div class="tower-silhouette"></div><main class="screen center-screen"><section class="title-shell"><div class="panel title-copy title-panel"><p class="eyebrow">Fantasy Turn-Based RPG • v0.4</p><h1>Laya Tower RPG</h1><p class="subtitle">อัปเกรดจาก v0.3 ด้วยระบบ Equipment, Inventory, ของดรอปหลังต่อสู้ และบอสที่มีสกิลเฉพาะมากขึ้น พร้อมเล่นบน GitHub Pages ได้เหมือนเดิม</p><div class="title-actions"><a class="btn btn-primary" id="startGameBtn" href="create-character.html">Start Game</a><a class="btn btn-secondary" id="continueBtn" href="menu.html">Continue</a><button class="btn btn-danger" id="resetBtn" type="button">Reset Character</button></div><div id="saveStatus" class="small-note"></div><div class="feature-list"><div class="feature-pill"><strong>Equipment</strong><span class="muted">Weapon / Armor / Charm</span></div><div class="feature-pill"><strong>Inventory</strong><span class="muted">Potion, Ether, Drops</span></div><div class="feature-pill"><strong>Boss Skills</strong><span class="muted">สกิลเฉพาะตามบอส</span></div></div></div><aside class="hero-stage-card"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div><div class="timeline" style="top:22px;left:22px;transform:none"><div class="token active">🗼</div><div class="token">⚔️</div><div class="token">🎒</div></div><div id="titleHeroArt" class="title-stage"></div><div class="story-box"><p class="eyebrow" style="margin-bottom:6px">Tower Chosen</p><h3 id="titleHeroName" style="margin-bottom:4px">Hero</h3><p id="titleHeroClass" class="small-note" style="margin-bottom:8px"></p><p id="titleHeroPassive" class="small-note" style="margin-bottom:8px"></p><p id="titleLoadout" class="small-note" style="margin-bottom:0"></p></div></aside></section></main><script src="js/player.js"></script><script src="js/game.js"></script><script>window.LayaGame.initTitlePage();</script></body></html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laya Tower RPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="screen title-screen">
+    <div class="panel title-panel">
+      <div class="subtitle">Fantasy Chibi Tower RPG</div>
+      <h1>Laya Tower RPG</h1>
+      <p class="muted">Phase 1 - Build 1</p>
+      <div class="menu-buttons">
+        <button id="newGameBtn" class="primary">New Game</button>
+        <button id="continueBtn">Continue</button>
+        <button id="resetSaveBtn" class="danger">Reset Save</button>
+      </div>
+      <p id="saveStatus" class="save-status"></p>
+    </div>
+  </div>
+
+  <div id="createScreen" class="screen hidden">
+    <div class="panel create-layout">
+      <div class="left-col">
+        <h2>Create Hero</h2>
+        <label>ชื่อตัวละคร</label>
+        <input id="heroName" type="text" maxlength="16" placeholder="เช่น Noi" />
+
+        <label>เพศ</label>
+        <div class="choice-row" id="genderRow">
+          <button class="choice-btn active" data-gender="male">Male</button>
+          <button class="choice-btn" data-gender="female">Female</button>
+        </div>
+
+        <label>อาชีพ</label>
+        <div id="classList" class="class-list"></div>
+
+        <div class="bottom-actions">
+          <button id="backToTitleBtn">Back</button>
+          <button id="createHeroBtn" class="primary">Create Hero</button>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="preview-card">
+          <div id="heroPreview" class="hero-preview">⚔️</div>
+          <h3 id="previewClassName">Striker</h3>
+          <div id="previewRole" class="role-text">Melee DPS</div>
+          <p id="previewDesc" class="desc-text"></p>
+          <div class="stat-box">
+            <div><span>HP</span><strong id="statHP">1200</strong></div>
+            <div><span>MP</span><strong id="statMP">80</strong></div>
+            <div><span>ATK</span><strong id="statATK">110</strong></div>
+            <div><span>DEF</span><strong id="statDEF">70</strong></div>
+            <div><span>SPD</span><strong id="statSPD">90</strong></div>
+            <div><span>CRIT</span><strong id="statCRIT">8%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="menuScreen" class="screen hidden">
+    <div class="panel menu-panel">
+      <h2>Main Menu</h2>
+      <div class="hero-summary">
+        <div id="menuPreview" class="hero-preview small">⚔️</div>
+        <div>
+          <p><strong id="menuHeroName">-</strong></p>
+          <p id="menuClass">-</p>
+          <p>Level <span id="menuLevel">1</span> | EXP <span id="menuExp">0</span></p>
+        </div>
+      </div>
+      <div class="summary-grid">
+        <div>HP <strong id="menuHP">0</strong></div>
+        <div>MP <strong id="menuMP">0</strong></div>
+        <div>Gold <strong id="menuGold">0</strong></div>
+        <div>Floor <strong id="menuFloor">1</strong></div>
+      </div>
+      <div class="menu-buttons">
+        <button id="enterTowerBtn" disabled>Enter Tower (Build 2)</button>
+        <button id="inventoryBtn" disabled>Inventory (Build 3)</button>
+        <button id="saveBtn">Save</button>
+        <button id="backTitleFromMenuBtn">Back to Title</button>
+      </div>
+      <p class="muted">Build 1 มี Title / Create Character / Save-Load / Main Menu</p>
+    </div>
+  </div>
+
+  <script src="js/hero-data.js"></script>
+  <script src="js/save-system.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
