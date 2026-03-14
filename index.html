@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laya Tower RPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page page-title">
+  <div class="sky"></div>
+  <div class="stars"></div>
+  <div class="tower-silhouette"></div>
+
+  <main class="screen center-screen">
+    <section class="title-panel glass">
+      <p class="eyebrow">Fantasy Turn-Based RPG</p>
+      <h1>Laya Tower RPG</h1>
+      <p class="subtitle">สร้างฮีโร่ 1 คน เลือกอาชีพ 1 เดียว และไต่หอคอย 100 ชั้น</p>
+
+      <div class="button-stack">
+        <a class="btn btn-primary" id="startGameBtn" href="create-character.html">Start Game</a>
+        <a class="btn btn-secondary" id="continueBtn" href="menu.html">Continue</a>
+        <button class="btn btn-danger" id="resetBtn" type="button">Reset Character</button>
+      </div>
+
+      <div id="saveStatus" class="small-note"></div>
+    </section>
+  </main>
+
+  <script src="js/game.js"></script>
+  <script>
+    window.LayaGame.initTitlePage();
+  </script>
+</body>
+</html>

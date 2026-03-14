@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Menu - Laya Tower RPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page page-menu">
+  <div class="menu-bg"></div>
+  <main class="screen menu-layout">
+    <section class="panel glass hero-summary">
+      <p class="eyebrow">Main Menu</p>
+      <div class="hero-summary-top">
+        <div id="menuHeroAvatar" class="hero-avatar large-avatar"></div>
+        <div>
+          <h2 id="menuHeroName">Hero</h2>
+          <p id="menuHeroClass" class="class-role"></p>
+          <p id="menuHeroFloor" class="small-note"></p>
+        </div>
+      </div>
+      <div class="stats-box">
+        <div><span>Level</span><strong id="menuLevel"></strong></div>
+        <div><span>HP</span><strong id="menuHP"></strong></div>
+        <div><span>MP</span><strong id="menuMP"></strong></div>
+        <div><span>Gold</span><strong id="menuGold"></strong></div>
+      </div>
+      <p class="subtitle">
+        เกมนี้แยกจาก Laya Staff Task อย่างสมบูรณ์ ใช้ local save ของตัวเอง
+      </p>
+    </section>
+
+    <section class="panel glass menu-actions">
+      <a class="menu-card" href="tower.html">
+        <span class="menu-icon">🗼</span>
+        <strong>Enter Tower</strong>
+        <small>เลือกชั้นและเริ่มต่อสู้</small>
+      </a>
+
+      <a class="menu-card" href="battle.html">
+        <span class="menu-icon">⚔️</span>
+        <strong>Quick Battle</strong>
+        <small>เข้าสู่การต่อสู้ของชั้นล่าสุด</small>
+      </a>
+
+      <button class="menu-card" id="healBtn" type="button">
+        <span class="menu-icon">✨</span>
+        <strong>Rest at Camp</strong>
+        <small>ฟื้น HP / MP เต็ม</small>
+      </button>
+
+      <a class="menu-card" href="index.html">
+        <span class="menu-icon">🏰</span>
+        <strong>Title Screen</strong>
+        <small>กลับหน้าแรกของเกม</small>
+      </a>
+
+      <div id="menuMessage" class="small-note menu-message"></div>
+    </section>
+  </main>
+
+  <script src="js/player.js"></script>
+  <script src="js/game.js"></script>
+  <script>
+    window.LayaGame.initMenuPage();
+  </script>
+</body>
+</html>
